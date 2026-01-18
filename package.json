@@ -1,0 +1,35 @@
+{
+  "name": "wait-mcp",
+  "version": "0.1.0",
+  "description": "MCP Server that provides a wait/sleep tool with configurable duration",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "wait-mcp": "./dist/index.js"
+  },
+  "files": ["dist", "src", "tsconfig.json"],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/index.js",
+    "check": "biome check .",
+    "format": "biome format --write .",
+    "lint": "biome lint .",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": ["mcp", "model-context-protocol", "wait", "sleep", "delay"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.4"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@types/node": "^22.10.5",
+    "typescript": "^5.7.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
