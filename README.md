@@ -1,35 +1,35 @@
 # wait-mcp
 
-指定時間待機してレスポンスを返す MCP (Model Context Protocol) Server です。
+An MCP (Model Context Protocol) Server that waits for a specified time and returns a response.
 
-## 機能
+## Features
 
-- `wait` ツール: 指定されたミリ秒数待機してから完了メッセージを返します
-- タイムアウトのテスト、遅延のシミュレーション、レート制限のテストなどに便利です
+- `wait` tool: Waits for a specified number of milliseconds and returns a completion message
+- Useful for testing timeouts, simulating delays, testing rate limiting, and more
 
-## インストール
+## Installation
 
-### ローカルでの開発
+### Local Development
 
 ```bash
 npm install
 ```
 
-### npx で直接実行
+### Run Directly with npx
 
-GitHub から直接実行:
+Run directly from GitHub:
 
 ```bash
 npx github:sharo-jef/wait-mcp
 ```
 
-## 使い方
+## Usage
 
-### Claude Desktop での設定
+### Configuration for Claude Desktop
 
-Claude Desktop の設定ファイル (`claude_desktop_config.json`) に以下を追加:
+Add the following to your Claude Desktop configuration file (`claude_desktop_config.json`):
 
-GitHub から直接実行:
+Run directly from GitHub:
 
 ```json
 {
@@ -42,7 +42,7 @@ GitHub から直接実行:
 }
 ```
 
-ローカル開発の場合:
+For local development:
 
 ```json
 {
@@ -57,24 +57,24 @@ GitHub から直接実行:
 }
 ```
 
-### wait ツール
+### wait Tool
 
-**パラメータ:**
+**Parameters:**
 
-- `duration` (必須): 待機時間（ミリ秒）
-- `message` (オプション): 待機完了後に返すメッセージ（デフォルト: "Wait completed"）
+- `duration` (required): Wait time in milliseconds
+- `message` (optional): Message to return after wait completes (default: "Wait completed")
 
-**使用例:**
+**Usage Examples:**
 
 ```javascript
-// 3秒待機
+// Wait for 3 seconds
 {
   "duration": 3000
 }
 
-// カスタムメッセージ付きで5秒待機
+// Wait for 5 seconds with a custom message
 {
   "duration": 5000,
-  "message": "5秒の待機が完了しました"
+  "message": "Wait for 5 seconds completed"
 }
 ```
